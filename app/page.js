@@ -25,12 +25,21 @@ const page = () => {
       >
         Images
       </button>
-      <div className="p-10">
+
+      <div className="p-40">
+      {Images.map((elem,i)=>{
+            return <>
+             <a className="italic display-4" target="_blank" href={elem.download_url}>{elem.download_url}</a><br/>
+            </>
+          })}
+      </div>
+
+      <div className="p-12">
         {Images.map((elem, i) => {
            return <img
               key={i}
               src={elem.download_url}
-              width={300}
+              width={270}
               height={300}
               className="inline-block rounded m-10"
             />;
